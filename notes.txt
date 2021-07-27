@@ -3,7 +3,9 @@ ls  					list files
 cd [path]				change directory
 mv [old file path] [new file path]	move a file  
 rm  [file path]				remove file 
-cat [file path]				view file 
+cat [file path]				view file
+htop 					see which processes are running --> quit with q
+pkill -f 'R'				cancel all processes in R 
 
 Make small edits: 
 nano [file path]			edit file 
