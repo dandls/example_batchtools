@@ -1,0 +1,31 @@
+General commands: 
+ls  					list files
+cd [path]				change directory
+mv [old file path] [new file path]	move a file  
+rm  [file path]				remove file 
+cat [file path]				view file 
+
+Make small edits: 
+nano [file path]			edit file 
+
+Example Makefile: 
+benchmark : 
+	R CMD BATCH run_study.R  
+
+Setup evaluation: 
+libs.R					Load packages 
+def.R vs. def_test.R			Definitions (effiency parameters (#models, #reps, storage parameters (file names, registry name))
+run.R					Methods (functions that call methods, necessary parameter instance) 
+dgp.R 					Problems (data frame with study setup in my case, calls function to create datasets)) 
+run_study.R 				Batchtools setup that calls all three files above, rm(list = ls()) important  
+(makeExperimentRegistry, addProblem, addAlgorithm, addExperiment, submitJobs, waitForJobs)
+(get_results.R 				Postprocess results table from batchtools, reduceResultsDataTable, saveRDS)
+
+Run study: 
+nohup [command] & 			conduct action in background (no termination by closing)	
+e.g. nohup make benchmark & 
+.out files will be created with printouts 
+
+
+Workflow: 
+Make major changes on local machine, push to github, pull to external machine and just run nohup make [...] & on it. 
